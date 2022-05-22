@@ -6,13 +6,13 @@
 /* variables  */
 
 body {
-  background-color: rgb(12, 212, 145);
+  background: linear-gradient(to right, #bdc3c7, #2c3e50);
   overflow: hidden;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 .container {
   text-align: center;
@@ -28,7 +28,7 @@ body {
   width: 350px;
 }
 .prog-container::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   transform: translateY(-50%);

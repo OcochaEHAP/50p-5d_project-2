@@ -1,41 +1,41 @@
-let progress = document.getElementById("prog")
-let prev = document.getElementById("prev")
-let next = document.getElementById("next")
-let circles = document.querySelectorAll(".circle")
+let progress = document.getElementById("prog");
+let prev = document.getElementById("prev");
+let next = document.getElementById("next");
+let circles = document.querySelectorAll(".circle");
 
-let crrActive = 1 
+let crrActive = 1;
 
-next.addEventListener("click", _ => {
-  crrActive++
+next.addEventListener("click", () => {
+  crrActive++;
   if (crrActive > circles.length) {
-    crrActive = circles.length
+    crrActive = circles.length;
   }
-  update()
-})
-prev.addEventListener("click", _ => {
-  crrActive--
+  update();
+});
+prev.addEventListener("click", () => {
+  crrActive--;
   if (crrActive < 1) {
-    crrActive = 1
+    crrActive = 1;
   }
-  update()
-})
+  update();
+});
 function update() {
-  circles.forEach( (circle, index) => {
+  circles.forEach((circle, index) => {
     if (index < crrActive) {
-      circle.classList.add("active")
-    }else {
-      circle.classList.remove("active")
+      circle.classList.add("active");
+    } else {
+      circle.classList.remove("active");
     }
-    let actives = document.querySelectorAll(".active")
-    progress.style.width = ((actives.length -1 ) / (circles.length - 1)) * 100 + "%" 
+    let actives = document.querySelectorAll(".active");
+    progress.style.width =
+      ((actives.length - 1) / (circles.length - 1)) * 100 + "%";
     if (crrActive === 1) {
-      prev.disabled = true
+      prev.disabled = true;
     } else if (crrActive === circles.length) {
-      next.disabled = true
-    }else{
-      prev.disabled = false
-      next.disabled = false
-      
+      next.disabled = true;
+    } else {
+      prev.disabled = false;
+      next.disabled = false;
     }
-  })
+  });
 }
